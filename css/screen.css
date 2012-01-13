@@ -197,6 +197,14 @@ ul.posts {
     background-color: #333;
   }
 
+  #post blockquote {
+    padding: 0em 1em;
+    margin: 1em;
+    display: block;
+    border: 1px dotted gray;
+    background-color: #eee;
+  }
+
 #related {
   margin-top: 2em;
 }
