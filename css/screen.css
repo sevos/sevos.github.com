@@ -68,7 +68,6 @@ ul.posts {
 
   ul.posts span {
     color: #aaa;
-    font-family: Monaco, "Courier New", monospace;
     font-size: 80%;
   }
 
@@ -154,10 +153,15 @@ ul.posts {
 
   /* standard */
 
-  #post h1 {
+  #post h1,h2,h3,h4 {
     font-family: "league-gothic", "Arial Black", sans-serif;
     font-weight: 400;
   }
+
+  #post h1 { font-size: 200%; }
+  #post h2 { font-size: 170%; }
+  #post h3 { font-size: 150%; }
+  #post h4 { font-size: 120%; }
 
   #post pre {
     border: 1px solid #ddd;
