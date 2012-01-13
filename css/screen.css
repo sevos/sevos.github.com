@@ -17,7 +17,7 @@ html, body {
 
 body {
   background-color: white;
-  font: 13.34px helvetica, arial, clean, sans-serif;
+  font: 18px "dejarip", helvetica, arial, clean, sans-serif;
   *font-size: small;
   text-align: center;
 }
@@ -93,7 +93,7 @@ ul.posts {
 }
 
   .site .title a {
-    color: #a00;
+    color: #00a;
     text-decoration: none;
   }
 
@@ -153,6 +153,11 @@ ul.posts {
 }
 
   /* standard */
+
+  #post h1 {
+    font-family: "league-gothic", "Arial Black", sans-serif;
+    font-weight: 400;
+  }
 
   #post pre {
     border: 1px solid #ddd;
