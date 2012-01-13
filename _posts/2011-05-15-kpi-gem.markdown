@@ -120,3 +120,6 @@ end
 
 When you have your report object, you might want to send an email with data provided by it or do something else.
 That's all for now. Check it out on Github! All ideas and comments are welcome!
+
+---
+[KPI gem sourcecode on github](https://github.com/sevos/kpi)
