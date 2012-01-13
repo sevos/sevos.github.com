@@ -188,7 +188,7 @@ ul.posts {
   /* terminal */
 
   #post pre.terminal {
-    border: 1px solid black;
+    border: 10px solid #eee;
     background-color: #333;
     color: white;
   }
