@@ -1,0 +1,122 @@
+---
+layout: post
+title: KPI gem
+---
+
+# KPI gem
+
+Clients for whom I worked, at some stage of the are almost always asked me
+to create statistics describing the status and dynamics of development.
+The simplest example is number of registered users, but with time
+it always get more complex.
+
+I decided to build a small library in order to have common way of defining the statistics among my projects.
+[Gem statistics](https://github.com/acatighera/statistics) gives not enough
+freedom to me. I need to be able to define reports having complex row
+definitions and reports made of other reports.
+
+First I developed gem with ActionMailer support (with simple report email),
+but recently my another client asked me for statistics in rails 2.3.x project.
+Then problems with compatibility came up, so I decided to remove ActionMailer
+support completely. The gem delivers only possibility to build reports as ruby objects now. You should create views for those on your own.
+
+Example report:
+{% highlight ruby %}
+class DailyStatsReport < KPI::Report
+  def users
+    result 'Users', User.count, :description => 'Total users count'
+  end
+
+  def premium_users
+    result 'Premium users', User.premium.count
+  end
+
+  def premium_users_percentage
+    result 'Premium users', premium_users.to_f / users * 100, :unit => '%'
+  end
+
+  def income
+    result 'Total income', Order.paid.sum(:total), :unit => 'EUR'
+  end
+
+  def daily_income
+    result 'Daily income', Order.paid.where(:created_at => the_day).sum(:total), :unit => 'EUR'
+  end
+
+  private
+
+  def the_day
+    @yesterday ||= begin
+      yesterday = (time - 1.day)
+      yesterday.beginning_of_day..yesterday.end_of_day
+    end
+  end
+end
+{% endhighlight %}
+
+
+You can get report by instantiating report class
+{% highlight ruby %}
+report = DailyStatsReport.new
+{% endhighlight %}
+
+Each value is cached after calculation while report object exists.
+Calling report methods will trigger calculation and return `KPI::Entry` object:
+
+<pre class="terminal">
+<code>
+&gt; report.users
+=&gt; #&lt;KPI::Entry:0x10177f630 @name="Users", @unit=nil,
+     @description="Total users count", @value=874&gt;
+</code>
+</pre>
+
+`KPI::Report` provides enumerator `#entries` allowing to iterate through report entries:
+
+<pre class="terminal">
+<code>
+&gt; report.entries.map(&amp;:value)
+=&gt; [874, 14, 138.6, 19.8]
+</code>
+</pre>
+
+In order to get report for previous day, you should pass :time option to report initializer:
+{% highlight ruby %}
+report = DailyStatsReport.new(:time => 1.day.ago)
+{% endhighlight %}
+
+_NOTE: In entry definitions you should not use `Time.now` for determining
+current time, use `self.time` instead._
+
+## But that's not all! Stay tuned!
+
+There is another class `KPI::MergedReport`. It takes reports of the same type and merges them using function passed through block:
+{% highlight ruby %}
+report_today = DailyStatsReport.new
+report_yesterday = DailyStatsReport.new(:time => 1.day.ago)
+diff_report = KPI::MergedReport.new(report_today, report_yesterday) do |entry_today, entry_yesterday|
+  KPI::Entry.new '$$ (change)', entry_today.value - entry_yesterday.value
+end
+{% endhighlight %}
+
+_NOTE: For now unfortunately it is not possible to use result helper in that block. I am working on that._
+
+Now, we can get differences between reports:
+
+<pre class="terminal">
+<code>
+&gt; diff_report.premium_users
+=&gt; #&lt;KPI::Entry:0x11577e319 @name="Premium users (change)",
+     @unit=nil, @description="", @value=2&gt;
+</code>
+</pre>
+
+Actually it is not problem to pass more reports and calculate average value for example:
+{% highlight ruby %}
+avg_report = KPI::MergedReport.new(*week_reports) do |*entries|
+  KPI::Entry.new '$$ (avg)', entries.map(&:value).inject(:+).to_f / entries.size
+end
+{% endhighlight %}
+
+When you have your report object, you might want to send an email with data provided by it or do something else.
+That's all for now. Check it out on Github! All ideas and comments are welcome!
