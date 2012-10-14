@@ -206,6 +206,12 @@ ul.posts {
     background-color: #eee;
   }
 
+  #post a#mobi {
+    float: right;
+    font-size: 75%;
+    text-decoration: none;
+  }
+
 #related {
   margin-top: 2em;
 }
@@ -213,3 +219,7 @@ ul.posts {
   #related h2 {
     margin-bottom: 1em;
   }
+
+.clear {
+  clear: both;
+}
