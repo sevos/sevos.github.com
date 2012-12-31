@@ -151,7 +151,7 @@ require 'fog'
 class Node < Thor
   desc "up NAME", "Creates an instance"
   def up(instance_name)
-    server = compute.create_instance(
+    server = compute.servers.create(
         image_id:         config['ami'],
         flavor_id:        config['instance_type'],
         key_name:         config['key_name'],
