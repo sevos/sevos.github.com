@@ -184,7 +184,7 @@ class Node < Thor
   end
 
   def private_key_path
-    File.expand_path(File.join('config', 'keys', "#{config['key_name'}.pem"))
+    File.expand_path(File.join('config', 'keys', "#{config['key_name']}.pem"))
   end
 end
 {% endhighlight %}
