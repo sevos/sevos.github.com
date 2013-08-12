@@ -1,0 +1,184 @@
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: white;
+  font: 18px helvetica, arial, clean, sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+p {
+  margin: 1em 0;
+}
+
+a {
+  color: #00a;
+}
+
+a:hover {
+  color: black;
+}
+
+a:visited {
+  color: #a0a;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+
+ul.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+
+  li {
+    line-height: 1.75em;
+  }
+
+  span {
+    color: #aaa;
+    font-size: 80%;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+
+.site {
+  font-size: 110%;
+  text-align: justify;
+  width: 40em;
+  margin: 3em auto 2em auto;
+  line-height: 1.5em;
+
+  .meta {
+    color: #aaa;
+  } 
+
+  .title {
+    background-color: #3f92d2;
+    color: #a00;
+    font-weight: bold;
+    margin-bottom: 2em;
+
+    a {
+      color: #00a;
+      text-decoration: none;
+
+      &:hover {
+        color: black;
+      }
+    }
+
+    a.extra {
+      color: #aaa;
+      text-decoration: none;
+      margin-left: 1em;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+
+#post {
+  h1,h2,h3,h4 {
+    font-family: "league-gothic", "Arial Black", sans-serif;
+    font-weight: 400;
+  }
+
+  h1 { font-size: 200%; }
+  h2 { font-size: 170%; }
+  h3 { font-size: 150%; }
+  h4 { font-size: 120%; }
+
+  pre {
+    border: 1px solid #ddd;
+    background-color: #eef;
+    padding: 0 .4em;
+    line-height: 1;
+
+    code {
+      border: none;
+    }
+  }
+
+  pre.terminal {
+    border: 10px solid #eee;
+    background-color: #333;
+    color: white;
+
+    code {
+      background-color: #333;
+    }
+  }
+
+  code {
+    border: 1px solid #ddd;
+    background-color: #eef;
+    font-size: 75%;
+    padding: 0 .2em;
+  }
+
+  ul, ol {
+    margin-left: 1.35em;
+  }
+
+  blockquote {
+    padding: 0em 1em;
+    margin: 1em;
+    display: block;
+    border: 1px dotted gray;
+    background-color: #eee;
+  }
+}
+
+#related {
+  margin-top: 2em;
+
+  h2 {
+    margin-bottom: 1em;
+  }
+}
+
+.clear {
+  clear: both;
+}
