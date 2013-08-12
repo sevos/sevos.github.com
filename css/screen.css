@@ -17,8 +17,7 @@ html, body {
 
 body {
   background-color: white;
-  font: 18px "dejarip", helvetica, arial, clean, sans-serif;
-  *font-size: small;
+  font: 18px helvetica, arial, clean, sans-serif;
   text-align: center;
 }
 
