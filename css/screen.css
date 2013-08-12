@@ -97,27 +97,26 @@ ul.posts span {
 }
 /* line 90, ../sass/screen.scss */
 .site .title {
-  background-color: #3f92d2;
   color: #a00;
   font-weight: bold;
   margin-bottom: 2em;
 }
-/* line 96, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 .site .title a {
   color: #00a;
   text-decoration: none;
 }
-/* line 100, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 .site .title a:hover {
   color: black;
 }
-/* line 105, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 .site .title a.extra {
   color: #aaa;
   text-decoration: none;
   margin-left: 1em;
 }
-/* line 109, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 .site .title a.extra:hover {
   color: black;
 }
@@ -127,60 +126,60 @@ ul.posts span {
 /* Posts
 /*
 /*****************************************************************************/
-/* line 123, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 #post h1, #post h2, #post h3, #post h4 {
   font-family: "league-gothic", "Arial Black", sans-serif;
   font-weight: 400;
 }
-/* line 128, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 #post h1 {
   font-size: 200%;
 }
-/* line 129, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 #post h2 {
   font-size: 170%;
 }
-/* line 130, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 #post h3 {
   font-size: 150%;
 }
-/* line 131, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 #post h4 {
   font-size: 120%;
 }
-/* line 133, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 #post pre {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .4em;
   line-height: 1;
 }
-/* line 139, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 #post pre code {
   border: none;
 }
-/* line 144, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 #post pre.terminal {
   border: 10px solid #eee;
   background-color: #333;
   color: white;
 }
-/* line 149, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 #post pre.terminal code {
   background-color: #333;
 }
-/* line 154, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 #post code {
   border: 1px solid #ddd;
   background-color: #eef;
   font-size: 75%;
   padding: 0 .2em;
 }
-/* line 161, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 #post ul, #post ol {
   margin-left: 1.35em;
 }
-/* line 165, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 #post blockquote {
   padding: 0em 1em;
   margin: 1em;
@@ -189,16 +188,16 @@ ul.posts span {
   background-color: #eee;
 }
 
-/* line 174, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 #related {
   margin-top: 2em;
 }
-/* line 177, ../sass/screen.scss */
+/* line 176, ../sass/screen.scss */
 #related h2 {
   margin-bottom: 1em;
 }
 
-/* line 182, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 .clear {
   clear: both;
 }
